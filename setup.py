@@ -33,9 +33,15 @@ from setuptools import setup
 setup(
     name = 'drugs-harvesters',
     version = '0.1',
-    description = 'Harvesters to collect data on medications',
+
     author = 'Emmanuel Raviart',
     author_email = 'emmanuel@raviart.com',
+    description = 'Harvesters to collect data on medications',
     url = 'http://github.com/eraviart/drugs-harvesters',
+
+    install_requires = [
+        'lxml',
+        'requests',
+        ],
     packages = [],
     )
