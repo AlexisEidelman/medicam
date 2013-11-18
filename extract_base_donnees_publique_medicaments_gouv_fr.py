@@ -31,7 +31,6 @@ import argparse
 import codecs
 import collections
 import datetime
-import itertools
 import json
 import logging
 import os
