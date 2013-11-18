@@ -108,7 +108,7 @@ def main():
                 page_doc.xpath('//h2[@class="titrePresentation"]/following-sibling::br[1]'),
                 page_doc.xpath('//div[@class="infosCnam"]'),
                 ):
-            title = title_element.text.strip()
+            title = title_element.text.strip().lstrip(u'>').lstrip()
             cip_codes_match = cip_codes_re.match(title_element.tail.strip())
             cip_codes = [cip_codes_match.group('cip_code0'), cip_codes_match.group('cip_code1')]
 
