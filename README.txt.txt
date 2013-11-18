@@ -1,1 +1,0 @@
-Moissonnage pour obtenir des informations françaises sur le médicament.
