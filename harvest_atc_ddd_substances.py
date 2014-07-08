@@ -6,7 +6,7 @@
 # By: Emmanuel Raviart <emmanuel@raviart.com>
 #
 # Copyright (C) 2014 Etalab
-# http://github.com/eraviart/drugs-harvesters
+# https://github.com/AlexisEidelman/medicam
 #
 # This file is part of Drugs-Harvesters.
 #
