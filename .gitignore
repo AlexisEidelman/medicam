@@ -1,3 +1,6 @@
+atc-ddd.csv
+atc-ddd.xls
+atc-ddd/
 base-donnees-publique.medicaments.gouv.fr/
 *.egg-info
 *.pyc
