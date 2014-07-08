@@ -41,7 +41,9 @@ import lxml.html
 
 
 app_name = os.path.splitext(os.path.basename(__file__))[0]
+authorization_holder_re = re.compile(ur"Titulaire de l'autorisation : (?P<name>.+)$")
 cip_codes_re = re.compile(ur'Code CIP : (?P<cip_code0>[- \d]+) ou (?P<cip_code1>[- \d]+)$')
+cis_code_re = re.compile(ur'Code CIS :  (?P<cis_code>.+)$')
 conditioning_re = re.compile(ur'(?P<type>.+) \(Composition (pour (?P<quantity>.+))?\)$')
 drug_filename_re = re.compile(ur'page-(?P<drug_id>\d+)\.html$')
 log = logging.getLogger(app_name)
@@ -154,7 +156,21 @@ def main():
                 value = cell_elements[0].text.strip() or None,
                 ))
 
+        authorization_holder = None
+        cis_code = None
+        for info_element in page_doc.xpath('//div[@id="autreInfo"]/ul/li'):
+            info = info_element.text.strip()
+            match = authorization_holder_re.match(info)
+            if match is not None:
+                authorization_holder = match.group('name')
+            else:
+                match = cis_code_re.match(info)
+                if match is not None:
+                    cis_code = match.group('cis_code')
+
         drugs.append(dict(
+            authorization_holder = authorization_holder,
+            cis_code = cis_code,
             composition = composition or None,
             generic_groups = generic_groups or None,
             iab = iab or None,
