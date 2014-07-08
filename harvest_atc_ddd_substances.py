@@ -5,7 +5,7 @@
 # Drugs-Harvesters -- Harvesters to collect data on medications
 # By: Emmanuel Raviart <emmanuel@raviart.com>
 #
-# Copyright (C) 2013 Etalab
+# Copyright (C) 2014 Etalab
 # http://github.com/eraviart/drugs-harvesters
 #
 # This file is part of Drugs-Harvesters.
